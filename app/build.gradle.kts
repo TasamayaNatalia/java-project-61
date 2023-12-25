@@ -1,15 +1,16 @@
 plugins {
-    id("java")
-    id("application")
+    application
+    checkstyle
 }
-
 
 
 application {
     mainClass = "hexlet.code.App"
 }
 
-
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
 
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
@@ -19,8 +20,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation(platform("org.junit:junit-bom:5.9.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 }
 
 tasks.test {
