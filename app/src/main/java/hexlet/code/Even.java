@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Even {
@@ -21,20 +22,24 @@ public class Even {
             System.out.println("Your answer: " + userAnswer);
             if (number % 2 == 0 && userAnswer.equals("yes")) {
                 System.out.println("Correct!");
-                count = count + 1;
+                count++;
             } else if (number % 2 != 0 && userAnswer.equals("no")) {
                 System.out.println("Correct!");
-                count = count + 1;
+                count++;
             } else if (number % 2 != 0 && userAnswer.equals("yes")) {
-                System.out.println("'yes' is the wrong answer ;(. The correct answer was 'no'.\nLet's try again, " + userName);
+                System.out.println("'yes' is the wrong answer ;(. The correct answer was 'no'.\nLet's try again, " + userName + "!");
+                break;
             } else if (number % 2 == 0 && userAnswer.equals("no")) {
-                System.out.println("'no' is the wrong answer ;(. The correct answer was 'yes'.\nLet's try again, " + userName);
+                System.out.println("'no' is the wrong answer ;(. The correct answer was 'yes'.\nLet's try again, " + userName + "!");
                 break;
             } else {
-                System.out.println("Invalid input. Please enter 'yes' or 'no'.");
-                userAnswer = scanner.next();
+                System.out.println(userAnswer + " is the wrong answer ;(.\nLet's try again, " + userName + "!");
+                break;
+            }
+            //count = count + 1;
+            if (count == 3) {
+                System.out.println("Congratulations, " + userName + "!");
             }
         }
-        System.out.println("Congratulations, " + userName);
     }
 }
