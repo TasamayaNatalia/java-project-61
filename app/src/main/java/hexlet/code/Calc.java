@@ -13,8 +13,8 @@ public class Calc {
 
 
         while (count < 3) {
-            int firstNumber = (int) (Math.random() * 10);
-            int secondNumber = (int) (Math.random() * 10);
+            int firstNumber = (int) (Math.random() * 100);
+            int secondNumber = (int) (Math.random() * 100);
             char[] symbols = {'+', '-', '*'};
             int n = (int)Math.floor(Math.random() * symbols.length);
             char symbol = symbols[n];
