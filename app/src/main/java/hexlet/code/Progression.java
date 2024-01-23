@@ -26,7 +26,7 @@ public class Progression {
             //System.out.println("Question: " + firstNumber + " " + secondNumber);
             for (int i = 0; i < numbers.length; i++) {
                 if (i == missedNumber) {
-                    numbers[i] = -1;  // Use a different value to represent the missing number.
+                    numbers[i] = 0;
                     result += ".. ";
                 } else {
                     numbers[i] = firstNumber + (i * difference);
