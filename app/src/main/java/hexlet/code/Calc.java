@@ -33,11 +33,12 @@ public class Calc {
 
             int userAnswer = scanner.nextInt();
             System.out.println("Your answer: " + userAnswer);
+
             if (correctAnswer == userAnswer) {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("Question: " + firstNumber + symbol + secondNumber + "\nYour answer: " + userAnswer + "\n" + userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName + "!");
+                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName + "!");
                 break;
             }
             //count = count + 1;
