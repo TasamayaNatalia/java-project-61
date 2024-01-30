@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
