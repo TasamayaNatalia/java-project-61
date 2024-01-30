@@ -2,13 +2,13 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Calc.calculate;
+import static hexlet.code.games.Calc.calculate;
 import static hexlet.code.Cli.greeting;
-import static hexlet.code.Even.evenstarting;
-import static hexlet.code.GCD.findOfDivisor;
-import static hexlet.code.Prime.selectPrimeNumber;
+import static hexlet.code.games.Even.evenstarting;
+import static hexlet.code.games.GCD.findOfDivisor;
+import static hexlet.code.games.Prime.selectPrimeNumber;
 
-import static hexlet.code.Progression.completing;
+import static hexlet.code.games.Progression.completing;
 
 public class App {
     public static void main(String[] args) {
