@@ -1,51 +1,40 @@
 package hexlet.code.games;
-import java.util.Scanner;
-//import java.util.Random;
+import hexlet.code.Engine;
+
 public class Calc {
-    public static void calculate() {
+    public static void game() {
 
-        Scanner scanner = new Scanner(System.in);
-        int count = 0;
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        String rules = "What is the result of the expression?";
+        String[][] questionsChecks = new String[Engine.ROUNDS][2];
 
+        for (var questionsCheck : questionsChecks) {
+            final int firstNumber = (int) (Math.random() * 100);
+            final int secondNumber = (int) (Math.random() * 100);
 
-        while (count < 3) {
-            int firstNumber = (int) (Math.random() * 100);
-            int secondNumber = (int) (Math.random() * 100);
-            char[] symbols = {'+', '-', '*'};
-            int n = (int)Math.floor(Math.random() * symbols.length);
-            char symbol = symbols[n];
-
-            //int correctAnswer = firstNumber + symbol + secondNumber;
-            int correctAnswer;
-            if (symbol == '+') {
-                correctAnswer = firstNumber + secondNumber;
-            } else if (symbol == '-') {
-                correctAnswer = firstNumber - secondNumber;
-            } else {
-                correctAnswer = firstNumber * secondNumber;
-            }
-
-            System.out.println("Question: " + firstNumber + " " + symbol + " " + secondNumber);
-
-            int userAnswer = scanner.nextInt();
-            System.out.println("Your answer: " + userAnswer);
-
-            if (correctAnswer == userAnswer) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName + "!");
-                break;
-            }
-            //count = count + 1;
-            if (count == 3) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            String[] operators = {" + ", " - ", " * "};
+            questionsCheck[0] = (firstNumber + operators[1] + secondNumber);
+            questionsCheck[1] = Integer.toString(calc(firstNumber, secondNumber, operators[1]));
         }
+
+        Engine.engine(rules, questionsChecks);
+    }
+
+    public static int calc(int firstNumber, int secondNumber, String operator) {
+        int result;
+
+        switch (operator) {
+            case "+":
+                result = firstNumber + secondNumber;
+                break;
+            case "-":
+                result = firstNumber - secondNumber;
+                break;
+            case "*":
+                result = firstNumber * secondNumber;
+                break;
+            default:
+                throw new Error("Unknown operator!");
+        }
+        return result;
     }
 }
-

@@ -1,59 +1,36 @@
 package hexlet.code.games;
-
-import java.sql.SQLOutput;
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Progression {
-    public static void completing() {
+    public static void game() {
 
-        Scanner scanner = new Scanner(System.in);
-        int count = 0;
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What number is missing in the progression?");
+        String rules = "What number is missing in the progression?";
+        String[][] questionsChecks = new String[Engine.ROUNDS][2];
 
+        for (var questionsCheck: questionsChecks) {
+            final int firstNumber = (int) (Math.random() * 100);
+            final int difference = (int) (Math.random() * 10);
+            final int missedNumber = (int) (Math.random() * 10);
+            final int progressionLength = (int) (Math.random() * 10);
 
-        while (count < 3) {
-            int[] numbers = new int[10];
-            String result = "";
-
-            int firstNumber = (int) (Math.random() * 100);
-            int difference = (int) (Math.random() * 10);
-            int missedNumber = (int) (Math.random() * 10);
-
-            numbers[0] = firstNumber;
-            //System.out.println("Question: " + firstNumber + " " + secondNumber);
-            for (int i = 0; i < numbers.length; i++) {
-                if (i == missedNumber) {
-                    numbers[i] = 0;
-                    result += ".. ";
-                } else {
-                    numbers[i] = firstNumber + (i * difference);
-                    result += numbers[i] + " ";
-                }
-            }
-
-            System.out.println("Question: " + result.trim());
-
-            int userAnswer = scanner.nextInt();
-
-            int correctAnswer = firstNumber + (missedNumber * difference);
-
-            if (correctAnswer == userAnswer) {
-                System.out.println("Your answer: " + userAnswer);
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println("Question: " + result + "\nYour answer: " + userAnswer + "\n" + userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName + "!");
-                break;
-            }
-
-            if (count == 3) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            String[] progression = makeProgression(firstNumber, difference, progressionLength);
+            questionsCheck[1] = progression[missedNumber];
+            progression[missedNumber] = "..";
+            questionsCheck[0] = String.join(" ", progression);
         }
+        Engine.engine(rules, questionsChecks);
+    }
+    public static String[] makeProgression(int firstNumber, int difference, int progressionLength) {
+        String[] progression = new String[progressionLength];
+        progression[0] = Integer.toString(progressionLength);
+        var i = 1;
+        var numberProgression = firstNumber;
+        while (i < progressionLength - 1) {
+            numberProgression = numberProgression + difference;
+            progression[i] = Integer.toString(numberProgression);
+            i++;
+        }
+        return progression;
     }
 }
-
 

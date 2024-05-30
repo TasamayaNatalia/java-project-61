@@ -1,71 +1,35 @@
 package hexlet.code.games;
+import hexlet.code.Engine;
 
-import java.util.Scanner;
 
 public class Prime {
-    public static void selectPrimeNumber() {
-        Scanner scanner = new Scanner(System.in);
-        int count = 0;
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public static void game() {
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[][] questionsChecks = new String[Engine.ROUNDS][2];
 
+        for (var questionsCheck: questionsChecks) {
+            final int number = (int) (Math.random() * 100);
+            questionsCheck[0] = Integer.toString(number);
+            questionsCheck[1] = isPrime(number) ? "yes" : "no";
+        }
+        Engine.engine(rules, questionsChecks);
+    }
+    public static boolean isPrime(int number) {
+        if (number >= 2) {
 
-        while (count < 3) {
-        int number = (int) (Math.random() * 100);
-        System.out.println("Question: " + number);
-
-        String userAnswer = scanner.next();
-        System.out.println("Your answer: " + userAnswer);
-            String correctAnswer = " ";
-
-            //for (int i = 2; i * i <= number; i++) {
-                //if (number % i == 0) {
-                    //correctAnswer = "no";
-                //}
-            //}
-
-            if (number <= 1 ) {
-                correctAnswer = "no";
-            }  else {
-                for (int i = 2; i <= Math.sqrt(number); i++) {
-                    if (number % i == 0) {
-                        correctAnswer = "no";
-                        break;
-                    } else {
-                        correctAnswer = "yes";
-                    }
+            var i = 2;
+            while (i < number) {
+                if ((number % i) == 0) {
+                    break;
+                } else {
+                    i++;
                 }
             }
-
-            //System.out.println("Question: " + number);
-
-            //String userAnswer = scanner.next();
-            //System.out.println("Your answer: " + userAnswer);
-            if (userAnswer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                count++;
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".\nLet's try again, " + userName + "!");
-                break;
-            }
-            //count = count + 1;
-            if (count == 3) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
-        }
-    }//"Question: " + number + "\nYour answer: " + userAnswer + "\n" +
-
-    private static boolean isPrime(int number) {
-        if (number <= 1) {
+            return  (i == number);
+        } else {
             return false;
         }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }
+
+

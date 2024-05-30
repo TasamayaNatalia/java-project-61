@@ -1,14 +1,13 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
-import static hexlet.code.games.Calc.calculate;
 import static hexlet.code.Cli.greeting;
-import static hexlet.code.games.Even.evenstarting;
-import static hexlet.code.games.GCD.findOfDivisor;
-import static hexlet.code.games.Prime.selectPrimeNumber;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
-import static hexlet.code.games.Progression.completing;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -19,16 +18,15 @@ public class App {
         if(number == 1){
             greeting();
         } else if (number == 2) {
-            evenstarting();
+            Even.game();
         } else if (number == 3) {
-            calculate();
+            Calc.game();
         } else if (number == 4) {
-            findOfDivisor();
+            GCD.game();
         } else if (number == 5) {
-        completing();
+            Progression.game();
         } else if (number == 6) {
-            selectPrimeNumber();
+            Prime.game();
         }
-
     }
 }
