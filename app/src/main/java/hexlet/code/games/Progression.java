@@ -23,9 +23,9 @@ public class Progression {
     public static String[] makeProgression(int firstNumber, int difference, int progressionLength) {
         String[] progression = new String[progressionLength];
         progression[0] = Integer.toString(progressionLength);
-        var i = 1;
+        var i = 0;
         var numberProgression = firstNumber;
-        while (i < progressionLength - 1) {
+        while (i < progressionLength) {
             numberProgression = numberProgression + difference;
             progression[i] = Integer.toString(numberProgression);
             i++;
