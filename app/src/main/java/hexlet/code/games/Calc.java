@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 public class Calc {
     public static void game() {
 
-        String rules = "What is the result of the expression?";
+        String rules = "What is the result of the expression......?";
         String[][] questionsChecks = new String[Engine.ROUNDS][2];
 
         for (var questionsCheck : questionsChecks) {
