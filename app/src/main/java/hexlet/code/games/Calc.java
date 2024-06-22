@@ -16,9 +16,13 @@ public class Calc {
             final int secondNumber = (int) (Math.random() * 100);
             final int numberOfOperator = (int) (Math.random() * 3);
 
+
             String[] operators = {" + ", " - ", " * "};
-            questionsCheck[0] = (firstNumber + " " + operators[numberOfOperator] + " " + secondNumber);
-            questionsCheck[1] = Integer.toString(calc(firstNumber, secondNumber, operators[numberOfOperator]));
+            String operator = operators[numberOfOperator];
+
+            questionsCheck[0] = (firstNumber + " " + operator + " " + secondNumber);
+            questionsCheck[1] = Integer.toString(calc(firstNumber, secondNumber, operator));
+
         }
 
         Engine.engine(rules, questionsChecks);
@@ -29,9 +33,8 @@ public class Calc {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
             case "*" -> firstNumber * secondNumber;
-            default -> throw new Error("Unknown operator!");
+            default -> 0;
         };
     }
-
 }
 
