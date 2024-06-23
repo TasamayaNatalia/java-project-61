@@ -13,9 +13,8 @@ public class Prime {
             questionsCheck[1] = isPrime(number) ? "yes" : "no";
         }
         Engine.engine(rules, questionsChecks);
-
-
     }
+
     public static boolean isPrime(int number) {
         if (number >= 2) {
 
