@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static  final int ROUNDS = 3;
+
     public static void engine(String rules, String[][] questionsChecks) {
         Scanner scanner = new Scanner(System.in);
 
