@@ -20,6 +20,7 @@ public class Progression {
         }
         Engine.engine(rules, questionsChecks);
     }
+
     public static String[] makeProgression(int firstNumber, int difference, int progressionLength) {
         String[] progression = new String[progressionLength];
         progression[0] = Integer.toString(progressionLength);
