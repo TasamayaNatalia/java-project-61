@@ -19,7 +19,7 @@ public class Calc {
             String[] operators = {" + ", " - ", " * "};
             String operator = operators[numberOfOperator];
 
-            questionsCheck[0] = firstNumber + " " + operator + " " + secondNumber;
+            questionsCheck[0] = String.valueOf(firstNumber + operator + secondNumber);
             questionsCheck[1] = calc(firstNumber, secondNumber, operator);
         }
 
