@@ -27,7 +27,7 @@ public class Progression {
         progression[0] = Integer.toString(firstNumber);
         var i = 1;
         var numberProgression = firstNumber;
-        while (i < progressionLength - 1) {
+        while (i < progressionLength) {
             numberProgression = numberProgression + difference;
             progression[i] = Integer.toString(numberProgression);
             i++;
