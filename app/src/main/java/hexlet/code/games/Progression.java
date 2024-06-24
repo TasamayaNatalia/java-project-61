@@ -11,7 +11,7 @@ public class Progression {
             final int firstNumber = (int) (Math.random() * 100);
             final int difference = (int) (Math.random() * 10);
             final int missedNumber = (int) (Math.random() * 10);
-            final int progressionLength = (int) (Math.random() * 10);
+            final int progressionLength = (int) (Math.random() * 10) + 5;
 
             String[] progression = makeProgression(firstNumber, difference, progressionLength);
             questionsCheck[1] = progression[missedNumber];
@@ -23,7 +23,7 @@ public class Progression {
 
     public static String[] makeProgression(int firstNumber, int difference, int progressionLength) {
         String[] progression = new String[progressionLength];
-        progression[0] = Integer.toString(progressionLength);
+        progression[0] = Integer.toString(firstNumber);
         var i = 1;
         var numberProgression = firstNumber;
         while (i < progressionLength - 1) {
