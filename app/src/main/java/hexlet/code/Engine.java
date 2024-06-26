@@ -21,11 +21,11 @@ public class Engine {
             if (userAnswer.equals(questionsCheck[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.printf(userAnswer +
-                        " is wrong answer ;(. Correct answer was " +
-                        questionsCheck[1] +
-                        ".\nLet's try again, " +
-                        userName + "!");
+                System.out.printf(userAnswer
+                        + " is wrong answer ;(. Correct answer was "
+                        + questionsCheck[1]
+                        + ".\nLet's try again, "
+                        + userName + "!");
                 return;
             }
         }
