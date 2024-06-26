@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        int greet = 1;
-        int gameEven = 2;
-        int gameCalc = 3;
-        int gameGcd = 4;
-        int gameProgression = 5;
-        int gamePrime = 6;
+//        int greet = 1;
+//        int gameEven = 2;
+//        int gameCalc = 3;
+//        int gameGcd = 4;
+//        int gameProgression = 5;
+//        int gamePrime = 6;
 
 
         System.out.println("""
@@ -30,17 +30,17 @@ public class App {
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         System.out.println("Your choice: " + number);
-        if (number == greet) {
+        if (number == 1) {
             greeting();
-        } else if (number == gameEven) {
+        } else if (number == 2) {
             Even.game();
-        } else if (number == gameCalc) {
+        } else if (number == 3) {
             Calc.game();
-        } else if (number == gameGcd) {
+        } else if (number == 4) {
             GCD.game();
-        } else if (number == gameProgression) {
+        } else if (number == 5) {
             Progression.game();
-        } else if (number == gamePrime) {
+        } else if (number == 6) {
             Prime.game();
         }
     }
