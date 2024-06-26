@@ -27,6 +27,7 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit""");
+
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         System.out.println("Your choice: " + number);
