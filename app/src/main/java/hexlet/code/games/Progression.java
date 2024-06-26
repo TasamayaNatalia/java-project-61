@@ -1,4 +1,5 @@
 package hexlet.code.games;
+import java.util.Random;
 
 import hexlet.code.Engine;
 
@@ -11,8 +12,9 @@ public class Progression {
         for (var questionsCheck: questionsChecks) {
             final int firstNumber = (int) (Math.random() * 100);
             final int difference = (int) (Math.random() * 10);
-            final int missedNumber = (int) (Math.random() * 10);
             final int progressionLength = (int) (Math.random() * 10) + 5;
+            final int missedNumber = new Random().nextInt(progressionLength + 1);
+
 
             String[] progression = makeProgression(firstNumber, difference, progressionLength);
             questionsCheck[1] = progression[missedNumber];
