@@ -17,7 +17,6 @@ public class App {
 //        int gameProgression = 5;
 //        int gamePrime = 6;
 
-
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
