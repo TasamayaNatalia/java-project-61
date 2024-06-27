@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import static hexlet.code.Cli.greeting;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
