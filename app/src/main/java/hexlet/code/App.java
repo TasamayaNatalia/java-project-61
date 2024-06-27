@@ -10,12 +10,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-//        int greet = 1;
-//        int gameEven = 2;
-//        int gameCalc = 3;
-//        int gameGcd = 4;
-//        int gameProgression = 5;
-//        int gamePrime = 6;
 
         System.out.println("""
                 Please enter the game number and press Enter.
