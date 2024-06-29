@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import java.util.Random;
+import java.util.Arrays;
 
 import hexlet.code.Engine;
 
@@ -13,13 +14,18 @@ public class Progression {
             final int firstNumber = (int) (Math.random() * 100);
             final int difference = (int) (Math.random() * 10);
             final int progressionLength = (int) (Math.random() * 10) + 5;
-            final int missedNumber = new Random().nextInt(progressionLength + 1);
+            final int missedNumber = new Random().nextInt(progressionLength);
+            System.out.println(firstNumber);
+            System.out.println(difference);
+            System.out.println(progressionLength);
+            System.out.println(missedNumber);
 
 
             String[] progression = makeProgression(firstNumber, difference, progressionLength);
             questionsCheck[1] = progression[missedNumber];
             progression[missedNumber] = "..";
             questionsCheck[0] = String.join(" ", progression);
+            System.out.println(Arrays.toString(questionsChecks));
         }
         Engine.engine(rules, questionsChecks);
     }
