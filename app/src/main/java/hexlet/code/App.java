@@ -10,12 +10,12 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-    private static final int greet = 1;
-    private static final int gameEven = 2;
-    private static final int gameCalc = 3;
-    private static final int gameGcd = 4;
-    private static final int gameProgression = 5;
-    private static final int gamePrime = 6;
+    private static final int GREET = 1;
+    private static final int GAMEEVEN = 2;
+    private static final int GAMECALC = 3;
+    private static final int GAMEGCD = 4;
+    private static final int GAMEPROGRESSION = 5;
+    private static final int GAMEPRIME = 6;
 
     public static void main(String[] args) {
 //        int greet = 1;
@@ -39,17 +39,17 @@ public class App {
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         System.out.println("Your choice: " + number);
-        if (number == greet) {
+        if (number == GREET) {
             greeting();
-        } else if (number == gameEven) {
+        } else if (number == GAMEEVEN) {
             Even.game();
-        } else if (number == gameCalc) {
+        } else if (number == GAMECALC) {
             Calc.game();
-        } else if (number == gameGcd) {
+        } else if (number == GAMEGCD) {
             GCD.game();
-        } else if (number == gameProgression) {
+        } else if (number == GAMEPROGRESSION) {
             Progression.game();
-        } else if (number == gamePrime) {
+        } else if (number == GAMEPRIME) {
             Prime.game();
         }
     }
