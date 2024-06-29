@@ -20,7 +20,6 @@ public class Progression {
             System.out.println(progressionLength);
             System.out.println(missedNumber);
 
-
             String[] progression = makeProgression(firstNumber, difference, progressionLength);
             questionsCheck[1] = progression[missedNumber];
             progression[missedNumber] = "..";
