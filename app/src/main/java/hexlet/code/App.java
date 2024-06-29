@@ -10,13 +10,20 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+    private static final int greet = 1;
+    private static final int gameEven = 2;
+    private static final int gameCalc = 3;
+    private static final int gameGcd = 4;
+    private static final int gameProgression = 5;
+    private static final int gamePrime = 6;
+
     public static void main(String[] args) {
-        int greet = 1;
-        int gameEven = 2;
-        int gameCalc = 3;
-        int gameGcd = 4;
-        int gameProgression = 5;
-        int gamePrime = 6;
+//        int greet = 1;
+//        int gameEven = 2;
+//        int gameCalc = 3;
+//        int gameGcd = 4;
+//        int gameProgression = 5;
+//        int gamePrime = 6;
 
 
         System.out.println("""
