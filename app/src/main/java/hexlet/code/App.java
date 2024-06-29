@@ -25,17 +25,17 @@ public class App {
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         System.out.println("Your choice: " + number);
-        if(number == 1) {
+        if (number == 1) {
             greeting();
-        } else if(number == 2) {
+        } else if (number == 2) {
             Even.game();
-        } else if(number == 3) {
+        } else if (number == 3) {
             Calc.game();
-        } else if(number == 4) {
+        } else if (number == 4) {
             GCD.game();
-        } else if(number == 5) {
+        } else if (number == 5) {
             Progression.game();
-        } else if(number == 6) {
+        } else if (number == 6) {
             Prime.game();
         }
     }
