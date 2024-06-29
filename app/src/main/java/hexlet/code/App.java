@@ -11,6 +11,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        int greet = 1;
+        int gameEven = 2;
+        int gameCalc = 3;
+        int gameGcd = 4;
+        int gameProgression = 5;
+        int gamePrime = 6;
+
 
         System.out.println("""
                 Please enter the game number and press Enter.
@@ -25,17 +32,17 @@ public class App {
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         System.out.println("Your choice: " + number);
-        if (number == 1) {
+        if (number == greet) {
             greeting();
-        } else if (number == 2) {
+        } else if (number == gameEven) {
             Even.game();
-        } else if (number == 3) {
+        } else if (number == gameCalc) {
             Calc.game();
-        } else if (number == 4) {
+        } else if (number == gameGcd) {
             GCD.game();
-        } else if (number == 5) {
+        } else if (number == gameProgression) {
             Progression.game();
-        } else if (number == 6) {
+        } else if (number == gamePrime) {
             Prime.game();
         }
     }
