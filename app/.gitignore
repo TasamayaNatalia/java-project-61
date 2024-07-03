@@ -15,6 +15,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+production/java-project-61/hexlet/code/
 
 ### Eclipse ###
 .apt_generated
